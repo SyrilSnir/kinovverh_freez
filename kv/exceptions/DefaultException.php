@@ -5,7 +5,7 @@ namespace app\kv\exceptions;
 
 use yii\base\ExitException;
 use \Yii;
-use app\kv\Tools;
+use app\kv\tools\Messages;
 /**
  * Для не обрабатываемых исключений
  *
@@ -29,7 +29,7 @@ class DefaultException extends ExitException
     public function __construct($name, $message, $code = 0, $status = 500, \Exception $previous = null){
         $response = yii::$app->getResponse();
             if (Yii::$app->request->isAjax) {                
-                $response->data = Tools::getErrorMessage($message, $code);
+                $response->data = Messages::getErrorMessage($message, $code);
                 $response->setStatusCode(200);
             }
             else {

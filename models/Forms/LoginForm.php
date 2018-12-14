@@ -1,9 +1,10 @@
 <?php
 
-namespace app\models;
+namespace app\models\Forms;
 
 use Yii;
 use yii\base\Model;
+use app\models\ActiveRecord\User;
 
 
 /**

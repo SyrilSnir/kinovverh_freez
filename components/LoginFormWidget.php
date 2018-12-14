@@ -3,7 +3,7 @@
 namespace app\components;
 
 use yii\base\Widget;
-use app\models\LoginForm;
+use app\models\Forms\LoginForm;
 
 class LoginFormWidget  extends Widget {
     

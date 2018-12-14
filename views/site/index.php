@@ -3,6 +3,7 @@
 //use Yii;
 use \yii\helpers\Html;
 use app\assets\AppAsset;
+use app\components\PopularFilmsWidget;
 
 
 /* @var $this yii\web\View */
@@ -129,4 +130,5 @@ $this->registerJs($carousel_js,yii\web\View::POS_END);
                     </div>
 		</div>
             </section>
+<?php echo PopularFilmsWidget::widget() ?>
 

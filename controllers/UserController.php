@@ -2,14 +2,14 @@
 
 namespace app\controllers;
 
-use app\models\LoginForm;
-use \app\models\RegisterForm;
+use app\models\Forms\LoginForm;
+use app\models\Forms\RegisterForm;
 use app\models\UserIdentity;
 use app\models\User;
 use \Yii;
 use yii\web\NotFoundHttpException;
 use app\kv\exceptions\DefaultException;
-use app\kv\Tools;
+use app\kv\tools\Messages;
 
 class UserController extends BaseController
 { 
@@ -119,12 +119,12 @@ class UserController extends BaseController
                 if ($dataToSave['name'] !== 'password_hash') {
                     $model->setAttribute($dataToSave['name'], $dataToSave['value']);
                 } else {
-                    $passHash =  Yii::$app->security->generatePasswordHash($dataToSave['value']); 
+                    $passHash = Yii::$app->security->generatePasswordHash($dataToSave['value']); 
                     $model->bitrix_user = 0;
                     $model->setAttribute($dataToSave['name'], $passHash);
                 }
                 $model->save();                
-                return Tools::getMessage('Данные успешно сохранены');
+                return Messages::getMessage('Данные успешно сохранены');
             }
             throw new DefaultException('RequestError','Ошибка в параметрах запроса');
             

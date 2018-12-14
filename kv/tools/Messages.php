@@ -1,12 +1,13 @@
 <?php
+namespace app\kv\tools;
 
-namespace app\kv;
 /**
- * Вспомогательные функции
+ * Менеджер сообщений
  *
  * @author kotov
  */
-class Tools {
+class Messages 
+{
     /**
      * 
      * @param type $message Текст сообщения
@@ -37,7 +38,7 @@ class Tools {
         if ($json) {
             return json_encode($message);
         }
-        return $message;
-        
-    }
+        return $message;        
+    } 
+    
 }

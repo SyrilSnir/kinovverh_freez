@@ -4,6 +4,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'Кинозал компании "ВВЕРХ"',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'kinovverh',
@@ -22,7 +23,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 [
-                    'pattern' => '',
+                    'pattern' => 'kinozal',
                     'route' => 'site/index',
                     'suffix' => ''
                 ],
@@ -30,8 +31,7 @@ $config = [
                     'pattern' => 'lk/save',
                     'route' => 'user/save',
                     'suffix' => ''
-                ]
-                ,
+                ],
                  '<action:(lk|login|register|logout)>' => 'user/<action>',
             ]
         ],

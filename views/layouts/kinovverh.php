@@ -60,16 +60,16 @@ $this->beginPage();
                     <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="/kinozal/">Главная</a></li>
-                                <li><a href="/about/o_kinozale/">О кинозале</a></li>
+                                <li><a href="/kinozal">Главная</a></li>
+                                <li><a href="/about">О кинозале</a></li>
                                 <li class="nav-dd"><a href="/kinozal/categories/">Фильмы</a><i class="glyphicon glyphicon-plus hidden-dt"></i>
                                     <ul class="dropdown-menu hidden-xs " role="menu" aria-labelledby="dLabel">
                                         <li><a  data-count='52' href="/kinozal/categories/6plus/">6+</a>                                                                                                                                                                                <a  data-count='3' href="/kinozal/categories/14plus/">14+</a>                                                                                        <a  data-count='43' href="/kinozal/categories/kinoniva/">Фильмы студии КиноНива</a>                                        </li><li>                                                                                                                                                                                                                                <a  data-count='1' href="/kinozal/categories/war/">Военное кино</a>                                                                                        <a  data-count='2' href="/kinozal/categories/drama/">Драмы</a>                                        </li><li>                                                <a  data-count='14' href="/kinozal/categories/mult/">Мультфильмы</a>                                                                                        <a  data-count='29' href="/kinozal/categories/child-film/">Детское кино</a>                                                                                                                                                                                <a  data-count='8' href="/kinozal/categories/serials/">Сериалы</a>                                        </li><li>                                                                                                                                        <a  data-count='1' href="/kinozal/categories/130/">Историческое кино</a>                                                                                        <a  data-count='1' href="/kinozal/categories/">Притча</a>                                         
                                     </ul>
                                     <ul class="visible-mobile">
-                                        <li><a href="/kinozal/categories/10plus/">10+</a></li>
-                                        <li><a href="/kinozal/categories/14plus/">14+</a></li>
-                                        <li><a href="/kinozal/categories/6plus/">6+</a></li>
+                                        <li><a href="/kinozal/znak/10plus/">10+</a></li>
+                                        <li><a href="/kinozal/znak/14plus/">14+</a></li>
+                                        <li><a href="/kinozal/znak/6plus/">6+</a></li>
                                         <li><a href="/kinozal/categories/Biography/">Биографии</a></li>
                                         <li><a href="/kinozal/categories/war/">Военное кино</a></li>
                                         <li><a href="/kinozal/categories/child-film/">Детское кино</a></li>
@@ -85,7 +85,7 @@ $this->beginPage();
                                     </ul>
                                 </li> 
                                 <li><a href="/audio/">Музыка</a></li> 
-                                <li><a href="/about/usloviya/">Условия</a></li>
+                                <li><a href="/about/conditions">Условия</a></li>
                                 <li><a href="/contacts/kinozal/">Контакты</a></li>
                             </ul>
                             <span class="nav-bl3 navbar-left hidden-xs">		  					

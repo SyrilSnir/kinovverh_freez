@@ -235,9 +235,13 @@ ul.nav.navbar-nav>li:first-of-type a{
 	cursor: pointer;
 }
 .pop-film__wrapp img{
-	/* height: 255px; */
+	height: 230px; 
+        width: 100%;
 	box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 	/* height: 200px; */
+}
+#f-pop .row {
+    padding: 0 25px;
 }
 .pop_film__caption h3{
 	font-size: 14px;
@@ -1556,4 +1560,7 @@ li.nav-dd ul.visible-mobile{
 }
 .btn > i {
 	margin-left: 5px;
+}
+div.required label:after {
+    content: " *";
 }

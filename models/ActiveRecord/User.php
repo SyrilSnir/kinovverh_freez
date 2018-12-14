@@ -1,11 +1,12 @@
 <?php
 
-namespace app\models;
+namespace app\models\ActiveRecord;
 
 use Yii;
 use yii\db\ActiveRecord;
-use yii\behaviors\TimestampBehavior;
 use \Faker\Factory as FakerFactory;
+use \app\models\TimestampTrait;
+
 use yii\db\Expression;
 
 /**
@@ -13,6 +14,9 @@ use yii\db\Expression;
  * 
  * @property integer $id
  * @property string $login
+ * @property string $first_name
+ * @property string $middle_name
+ * @property string $last_name
  * @property string $fio
  * @property string $password_hash write-only password 
  * @property integer $bitrix_user 
@@ -21,26 +25,15 @@ use yii\db\Expression;
  * @property integer $updated_at
  */
 class User extends ActiveRecord
-{
+{    
     const STATUS_DELETED = 0;
-    const STATUS_ACTIVE = 10;
+    const STATUS_ACTIVE = 1;
+    
+    use TimestampTrait;
     
     public static function tableName() {
         return Yii::$app->db->tablePrefix .'users';
     }
-    public function behaviors(){
-    return [
-        [
-            'class' => TimestampBehavior::className(),
-            'attributes' => [
-                ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-            ],
-            // если вместо метки времени UNIX используется datetime:
-            'value' => new Expression('NOW()'),
-        ],
-    ];
-}
     
     
     /**
@@ -70,8 +63,11 @@ class User extends ActiveRecord
     public function getName() {
         return $this->fio ? $this->fio : '';
     }
- 
-    /**
+    public function getFio() {
+        return trim($this->last_name.' '.$this->first_name,' ').' '.$this->middle_name;
+    }
+
+        /**
      * Валидация старых пользователей
      * @return boolean
      */
@@ -90,7 +86,8 @@ class User extends ActiveRecord
      */
     public function setTestUser($password =  'qwe') {
         $faker = FakerFactory::create();
-        $this->fio = $faker->name;
+        $this->first_name = $faker->firstName;
+        $this->last_name = $faker->lastName;
         $this->login = $faker->email;
         $this->password_hash = $this->setPassword($password);
         //$this->first_name

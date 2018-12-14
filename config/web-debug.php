@@ -4,6 +4,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'ВВЕРХ',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'kinovverh',
@@ -21,18 +22,22 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                [
-                    'pattern' => '',
+               '' => 'site/index',
+             //   'adminka/<_a:[\w-]+>' => 'adminka/main/',
+               [
+                    'pattern' => 'kinozal',
                     'route' => 'site/index',
-                    'suffix' => ''
+                    'suffix' => ''                   
                 ],
+                 '<action:(lk|login|register|logout)>' => 'user/<action>',
+                ['class' => 'app\components\url\KinozalRule'],
+            //    'kinozal/<slug:[\w\-]+>' => 'kinozal/viewl',
                 [
                     'pattern' => 'lk/save',
                     'route' => 'user/save',
                     'suffix' => ''
                 ]
-                ,
-                 '<action:(lk|login|register|logout)>' => 'user/<action>',
+                ,                
             ]
         ],
         'cache' => [
@@ -62,15 +67,7 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
-    ],
+    ],    
     'as access' => [
         'class' => '\yii\filters\AccessControl',
         'only' => ['user/lk'],
@@ -80,7 +77,15 @@ $config = [
                 'roles' => ['@']
             ]
         ]
-    ]
+    ],    
+    'modules' => [
+            'adminka' => [
+                'class' => 'app\modules\adminka\Module',
+                'layout' => 'main',
+                'defaultRoute' => 'main/index',
+            ]
+        ]    
+    
 ];
 
 if (YII_ENV_DEV) {

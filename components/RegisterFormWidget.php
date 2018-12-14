@@ -3,7 +3,7 @@
 namespace app\components;
 
 use yii\base\Widget;
-use app\models\RegisterForm;
+use app\models\Forms\RegisterForm;
 
 class RegisterFormWidget  extends Widget {
     
