@@ -16,6 +16,7 @@ require __DIR__  . '/../config/defines.inc.php';
 /**
  * Настройка алиасов
  */    
+Yii::setAlias('@views', dirname(__DIR__) . '/views');
 Yii::setAlias('@module_admin_views', dirname(__DIR__) . '/modules/adminka/views');
 //-----------------------------------------------------------------------
 (new yii\web\Application($config))->run();

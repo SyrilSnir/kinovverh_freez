@@ -124,61 +124,8 @@ class SiteController extends BaseController
         }
     }
     public function actionTest() {
-       
-        $film = new Films();
-        $film->id = 1;
-        $film->name = 'Я верю в тебя';
-        $film->year = 2017;
-        $film->znak_id = 2;
-        $film->preview_text = 'Как важно, чтобы в тебя верили! Лёшенька приехал в лагерь, но он чувствует себя совершенно одиноким и беспомощным, несмотря на дедушку, который работает здесь же столяром и дворником. Вожатая говорит, что Лёшенька должен участвовать в Зарнице. Лёшенька покорно принимает это «наказание», но вдруг рядом с ним оказывается Катя, благодаря которой мальчик меняется и совершает подвиг… ';
-        $film->insert(false);
-        unset ($film);
-       
-        $film = new Films();
-        $film->id = 2;
-        $film->name = 'Сказ о Петре и Февронии';
-        $film->year = 2017;
-        $film->znak_id = 2;
-        $film->preview_text = '';
-        $film->insert(false);
-        unset ($film);
-        
-        $znak = new Znak();
-        $znak->id = 1;
-        $znak->name = '0+';
-        $znak->code = '0plus';
-        $znak->insert(false);
-        unset ($znak);
-        
-        $znak = new Znak();
-        $znak->id = 2;
-        $znak->name = '6+';
-        $znak->code = '6plus';
-        $znak->insert(false);
-         unset ($znak);
-         
-        $znak = new Znak();
-        $znak->id = 3;
-        $znak->name = '12+';
-        $znak->code = '12plus';
-        $znak->insert(false);
-         unset ($znak);
-         
-        $znak = new Znak();
-        $znak->id = 4;
-        $znak->name = '16+';
-        $znak->code = '16plus';
-        $znak->insert(false);
-         unset ($znak);
-                
-        $znak = new Znak();
-        $znak->id = 5;
-        $znak->name = '18+';
-        $znak->code = '18plus';
-        $znak->insert(false);
-         unset ($znak);
-         
-        return $this->render('index');
+        return Yii::getAlias('@views');
+       // return $this->render('index');
     }
 
     

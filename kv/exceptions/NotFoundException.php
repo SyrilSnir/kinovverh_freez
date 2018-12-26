@@ -1,6 +1,6 @@
 <?php
 
-namespace app\kv\repositories;
+namespace app\kv\exceptions;
 
 /**
  * Description of NotFoundException

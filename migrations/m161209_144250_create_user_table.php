@@ -23,7 +23,6 @@ class m161209_144250_create_user_table extends KVMigration
             'password_reset_token' => $this->string()->unique(),
             'fio' => $this->string(),
             'birthday' => $this->string(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'bitrix_user' => $this->smallInteger()->notNull()->defaultValue(0),
             'external' => $this->smallInteger()->notNull()->defaultValue(0),
             'created_by' => Schema::TYPE_INTEGER,

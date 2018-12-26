@@ -116,16 +116,16 @@ $this->registerJs($carousel_js,yii\web\View::POS_END);
                     <p class="h-title">Выберите категорию:</p>
                     <div class="cat-buttons row">
                         <div class=" col-xs-3 col-xs-offset-0">
-                            <a href="/kinozal/categories/6plus/" class="f-btton">6<span>+</span></a>
+                            <a href="/kinozal/znak/6plus" class="f-btton">6<span>+</span></a>
                         </div>
                         <div class="col-xs-3">
-                            <a href="/kinozal/categories/10plus/" class="f-btton">10<span>+</span></a>
+                            <a href="/kinozal/znak/12plus" class="f-btton">12<span>+</span></a>
                        </div>
                         <div class="col-xs-3">
-                            <a href="/kinozal/categories/14plus/" class="f-btton">14<span>+</span></a>
+                            <a href="/kinozal/znak/16plus" class="f-btton">16<span>+</span></a>
                         </div>
                         <div class="f-btton-all col-xs-3">
-                            <a href="/kinozal/categories/" class="f-btton f-btton__all">Все<span>фильмы</span></a>
+                            <a href="/kinozal/categories" class="f-btton f-btton__all">Все<span>фильмы</span></a>
                         </div>
                     </div>
 		</div>

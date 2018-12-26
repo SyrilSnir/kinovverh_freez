@@ -1,9 +1,14 @@
+<?php
+/* @var $filmLists app\kv\repositories\Films\FilmList[] */
+foreach ($filmLists as $filmsList) {
+    if (empty($films = $filmsList->getFilms())): ?>
+        <p><?php echo $filmsList->getErrorMessage() ?></p>
+<?php endif;?>
 <section id="f-pop" class="f-pop-home">
-    <p class="h-title">Популярные фильмы</p>
-    <?php if (!empty($filmsList)) :?>
+    <p class="h-title"><?php echo $filmsList->getName()?></p>
     <div class="row">
-        <?php foreach ($filmsList as $film) :?>
-    <?php 
+<?php
+    foreach ($films as $film ) {
         if (!empty($film['images'])) {
             $filmObjectImage = json_decode($film['images']);
             $filmAnonsImage = $filmObjectImage->anons_image ? 
@@ -11,10 +16,9 @@
         } else {
             $filmAnonsImage = 'no-image.jpg';
         }
-    ?>
-    
+?>
     <div class="pop-film col-md-2">
-        <div class="pop-film__wrapp" data-id="<?php echo $film->id ?>">
+        <div class="pop-film__wrapp" data-id="<?php echo $film->id ?>"> 
             <a class="pop-film__play" href="/kinozal/<?php echo $film->code ?>"></a>
             <span class="pop-film__vozr"><?php echo $film->category->name ?></span>
             <div class="pop-film__data hidden-mobile">
@@ -56,12 +60,15 @@
 				<h3><?php echo $film->name ?></h3>
 				<p>(<?php echo $film->year ?>)</p>
 			</div>
-		</div>
-	</div>
-        
-        <?php endforeach;?>
+        </div>
     </div>
-    <?php endif; ?>   
-    
-</section>
+            
+<?php
+    }
+?>
+    </div>
+</section>    
+<?php
+}
+?>
 

@@ -85,7 +85,7 @@ class UserController extends BaseController
             if ($this->registerForm->validate()) {
                 $userRecord = new UserIdentity();
                 $userRecord->setUserRegistrationForm($this->registerForm);
-                $userRecord->save();
+                $userRecord->save(false);
                 Yii::$app->getUser()->login($userRecord);
                 return  $this->redirect("/");
                 

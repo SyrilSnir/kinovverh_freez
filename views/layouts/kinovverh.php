@@ -64,24 +64,38 @@ $this->beginPage();
                                 <li><a href="/about">О кинозале</a></li>
                                 <li class="nav-dd"><a href="/kinozal/categories/">Фильмы</a><i class="glyphicon glyphicon-plus hidden-dt"></i>
                                     <ul class="dropdown-menu hidden-xs " role="menu" aria-labelledby="dLabel">
-                                        <li><a  data-count='52' href="/kinozal/categories/6plus/">6+</a>                                                                                                                                                                                <a  data-count='3' href="/kinozal/categories/14plus/">14+</a>                                                                                        <a  data-count='43' href="/kinozal/categories/kinoniva/">Фильмы студии КиноНива</a>                                        </li><li>                                                                                                                                                                                                                                <a  data-count='1' href="/kinozal/categories/war/">Военное кино</a>                                                                                        <a  data-count='2' href="/kinozal/categories/drama/">Драмы</a>                                        </li><li>                                                <a  data-count='14' href="/kinozal/categories/mult/">Мультфильмы</a>                                                                                        <a  data-count='29' href="/kinozal/categories/child-film/">Детское кино</a>                                                                                                                                                                                <a  data-count='8' href="/kinozal/categories/serials/">Сериалы</a>                                        </li><li>                                                                                                                                        <a  data-count='1' href="/kinozal/categories/130/">Историческое кино</a>                                                                                        <a  data-count='1' href="/kinozal/categories/">Притча</a>                                         
+                                        <li><a  data-count='52' href="/kinozal/znak/6plus">6+</a>
+                                            <a  data-count='3' href="/kinozal/znak/12plus">12+</a>
+                                            <a  data-count='43' href="/kinozal/categories/kinoniva">Фильмы студии КиноНива</a>
+                                        </li>
+                                        <li>   
+                                            <a  data-count='1' href="/kinozal/categories/war">Военное кино</a>
+                                            <a  data-count='2' href="/kinozal/categories/drama">Драмы</a> 
+                                        </li><li>                                                
+                                            <a  data-count='14' href="/kinozal/categories/mult">Мультфильмы</a> 
+                                            <a  data-count='29' href="/kinozal/categories/child">Детское кино</a>
+                                            <a  data-count='8' href="/kinozal/categories/serials/">Сериалы</a>
+                                        </li><li>    
+                                            <a  data-count='1' href="/kinozal/categories/130/">Историческое кино</a>
+                                            <a  data-count='1' href="/kinozal/categories/">Притча</a> 
+                                            
                                     </ul>
                                     <ul class="visible-mobile">
-                                        <li><a href="/kinozal/znak/10plus/">10+</a></li>
-                                        <li><a href="/kinozal/znak/14plus/">14+</a></li>
-                                        <li><a href="/kinozal/znak/6plus/">6+</a></li>
-                                        <li><a href="/kinozal/categories/Biography/">Биографии</a></li>
-                                        <li><a href="/kinozal/categories/war/">Военное кино</a></li>
-                                        <li><a href="/kinozal/categories/child-film/">Детское кино</a></li>
-                                        <li><a href="/kinozal/categories/documental/">Документальное кино</a></li>
+                                        <li><a href="/kinozal/znak/0plus">0+</a></li>
+                                        <li><a href="/kinozal/znak/6plus">6+</a></li>
+                                        <li><a href="/kinozal/znak/12plus">12+</a></li>
+                                        <li><a href="/kinozal/categories/Biography">Биографии</a></li>
+                                        <li><a href="/kinozal/categories/war">Военное кино</a></li>
+                                        <li><a href="/kinozal/categories/child">Детское кино</a></li>
+                                        <li><a href="/kinozal/categories/documental">Документальное кино</a></li>
                                         <li><a href="/kinozal/categories/drama/">Драмы</a></li>
                                         <li><a href="/kinozal/categories/130/">Историческое кино</a></li>
                                         <li><a href="/kinozal/categories/comedy/">Комедии</a></li>
                                         <li><a href="/kinozal/categories/melodramma/">Мелодрамы</a></li>
-                                        <li><a href="/kinozal/categories/mult/">Мультфильмы</a></li>
-                                        <li><a href="/kinozal/categories/">Притча</a></li>
-                                        <li><a href="/kinozal/categories/serials/">Сериалы</a></li>
-                                        <li><a href="/kinozal/categories/kinoniva/">Фильмы студии КиноНива</a></li>                     
+                                        <li><a href="/kinozal/categories/mult">Мультфильмы</a></li>
+                                        <li><a href="/kinozal/categories">Притча</a></li>
+                                        <li><a href="/kinozal/categories/serials">Сериалы</a></li>
+                                        <li><a href="/kinozal/categories/kinoniva">Фильмы студии КиноНива</a></li>                     
                                     </ul>
                                 </li> 
                                 <li><a href="/audio/">Музыка</a></li> 
@@ -122,6 +136,45 @@ $this->beginPage();
     <div class="page-content">
       <?= $content ?>   
     </div>
+    <footer>
+        <div class="container">
+            <div class="col-md-12">
+                <p class="copyright text-center">© Кинозал семейного кино КИНОКОМПАНИИ «ВВЕРХ» 2016-<?php echo date('Y')?></p>
+            </div>
+        </div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter44880781 = new Ya.Metrika({
+                    id:44880781,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/40318850" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+    </footer>
+    
     <?php if ($guest): ?>
     <?php 
         $loginFormModel = $this->params['showLoginForm'] ? $this->params['LoginFormModel'] : null;

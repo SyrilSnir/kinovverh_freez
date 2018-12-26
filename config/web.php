@@ -32,6 +32,7 @@ $config = [
                     'route' => 'user/save',
                     'suffix' => ''
                 ],
+                '<download/[\w-]+>' => 'download/index',
                  '<action:(lk|login|register|logout)>' => 'user/<action>',
             ]
         ],

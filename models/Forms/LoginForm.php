@@ -5,6 +5,7 @@ namespace app\models\Forms;
 use Yii;
 use yii\base\Model;
 use app\models\ActiveRecord\User;
+use app\models\UserIdentity;
 
 
 /**
@@ -20,7 +21,7 @@ class LoginForm extends Model
     public $rememberMe = false;
 
     /**     
-     * @var User
+     * @var UserIdentity
      */
     protected $user = false;
 
@@ -70,13 +71,13 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->user === false) {
-            $this->user = User::findByUsername($this->username);
+            $this->user = UserIdentity::findByUsername($this->username);
         }
 
         return $this->user;
     }
     public function errorIfUsernameNotFound() {
-        $this->user = User::findByUsername($this->username);
+        $this->user = UserIdentity::findByUsername($this->username);
         if ($this->user == null) {
             $this->addError('username','Пользователь с таким e-mail не зарегистрирован');
         }

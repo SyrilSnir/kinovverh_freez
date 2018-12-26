@@ -15,7 +15,9 @@ class CommentForm extends Model
     public $userName;
     public $filmId;
     public $message;
-    
+    public $filmSlug;
+
+
     public function attributeLabels() 
     {
         return [
@@ -25,7 +27,10 @@ class CommentForm extends Model
     public function rules() 
     {
         return [
-            ['userName','required']
+            [['userName','message','filmSlug'],'required'],
+            ['filmId','number'],
+            ['message','string'],
+            ['filmSlug','string'],
         ];
         
     }

@@ -6,6 +6,8 @@ use Yii;
 use yii\db\ActiveRecord;
 use \Faker\Factory as FakerFactory;
 use \app\models\TimestampTrait;
+use app\models\Forms\RegisterForm;
+
 
 use yii\db\Expression;
 
@@ -44,7 +46,7 @@ class User extends ActiveRecord
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['login' => $username, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['login' => $username, 'active' => self::STATUS_ACTIVE]);
     }
     public function setPassword($password)
     {

@@ -29,15 +29,17 @@ $config = [
                     'route' => 'site/index',
                     'suffix' => ''                   
                 ],
+                '<_c:download>/<film:[\w\-]+>' => '<_c>/index',
                  '<action:(lk|login|register|logout)>' => 'user/<action>',
+                '<_c:kinozal>/<_a:(categories)>/<cat:[\w-]+>' => '<_c>/<_a>',
+                '<_c:kinozal>/<_a:(znak)>/<znak:[\w\d-]+>' => '<_c>/<_a>',
                 ['class' => 'app\components\url\KinozalRule'],
             //    'kinozal/<slug:[\w\-]+>' => 'kinozal/viewl',
                 [
                     'pattern' => 'lk/save',
                     'route' => 'user/save',
                     'suffix' => ''
-                ]
-                ,                
+                ],                
             ]
         ],
         'cache' => [

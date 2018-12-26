@@ -18,6 +18,11 @@ class KinozalRule implements UrlRuleInterface
 {
     
     public $prefix = 'kinozal';
+    public $noneFilmCode = [
+      'save-comment',
+      'categories',
+      'znak'
+    ];
     
     public function createUrl($manager, $route, $params) 
     {
@@ -38,8 +43,9 @@ class KinozalRule implements UrlRuleInterface
         if(Url::getValFromURI(0,$request->pathInfo) != $this->prefix) {
             return false;
         }
+        
         $filmCode = Url::getValFromURI(1,$request->pathInfo);
-        if (empty($filmCode)) {
+        if (empty($filmCode) || in_array($filmCode, $this->noneFilmCode)) {
             return false;
         }
         //return ['kinozal/view',['slug' => 'lkkol']];

@@ -1,5 +1,17 @@
-<?php if ($showUpBlock)
-    echo $this->render('blocks-up/'.$action,['model' => $model])
+<?php 
+/* @var $this yii\web\View */
+
+if (!empty($model['images'])) {
+    $filmObjectImage = json_decode($model['images']);
+    $filmDetailImage = $filmObjectImage->detail_image ? 
+                    $filmObjectImage->detail_image : 'no-image.jpg';
+} else {
+    $filmDetailImage = 'no-image.jpg';
+}
+$this->params['filmDetailImage'] = $filmDetailImage;
+if ($showUpBlock) {    
+    echo $this->render('blocks-up/'.$action,['model' => $model]);
+}
     ?>
 <section class="section-2">
     <div class="container">

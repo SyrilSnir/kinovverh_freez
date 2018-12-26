@@ -19,16 +19,16 @@ use Yii;
  * @property string $preview_text
  * @property string $detail_text
  * @property integer $year 
- * @property integer $categories_id 
+ * @property integer $category_id 
  * @property integer $rating
  * @property string $images
  * @property integer $shows
  * @property Person[] $actors
  * @property Person[] $editors
  * @property Category $category
- * @property Comments[] $comments все комментарии
- * @property Comments[] $moderateComments комментарии на модерации
- * @property Comments[] $availableComments доступные комментарии
+ * @property FilmComment[] $comments все комментарии
+ * @property FilmComment[] $moderateComments комментарии на модерации
+ * @property FilmComment[] $availableComments доступные комментарии
  * @property integer $downloads
  * @property integer $created_by
  * @property integer $created_at

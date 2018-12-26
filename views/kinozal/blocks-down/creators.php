@@ -1,3 +1,6 @@
+<?php
+/* @var $this yii\web\View */
+?>
 <div class="films-tabs__content tab-content">
     <div role="tabpanel" class="tab-pane active" id="tab6">
         <div class="col-md-9">
@@ -31,19 +34,9 @@
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
-							</div>
-							
-							<div class="col-md-3">
-								<div class="tabs-show">
-									<div class="tabs-show__wrapper">
-										<a class="tabs-show__button btn active" href="/kinozal/skaz-o-petre-i-fevronii/view/">Смотреть онлайн</a>
-										<a class="tabs-show__button btn" href="#pop-enter" data-toggle="modal" data-id="608">Смотреть позже <i class="glyphicon glyphicon-bookmark"></i></a>
-										<a href="#" class="tabs-show__img">
-											<img src="/upload/iblock/6bc/6bc2e2248f8b17cbcb70023c1200be6e.jpg" class="img-responsive" alt="Image">
-										</a>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-					</div>
+        </div>
+        <?php
+echo $this->render('_viewblock',['film' => $model]);
+        ?>
+    </div>
+</div>
